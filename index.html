@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        html, body { min-height: 100%;font-family:Microsoft Yahei;}
+        html {font-size: 50px;}
+        body { background-color: #f4f4f4; font-size: 14px;}
+        ul,li { list-style-type: none;}
+        a, input, button, textarea, img { border: 0; -webkit-tap-highlight-color:rgba(0,0,0,0);} /*去除点击阴影*/
+        h1, h2, h3, h4, h5, h6{ font-weight:normal;}
+        a{ text-decoration:none; color:#333;}
+        a:hover{ text-decoration:none; color:#f49503;}
+        i, em { font-style: normal;}
+        .fl { float:left;}
+        .fr { float:right;}
+        .cf {*zoom:1;}
+        .cf:after { content:""; display:table; clear:both;}
+
+        .flex{display:flex;}
+        .row{flex-direction: row}
+        .column{flex-direction:column;}
+        .space-around{justify-content: space-around}
+        .space-between{justify-content: space-between}
+
+        .astart{align-items:flex-start;}
+        .aend{align-items:flex-end;}
+        .acenter{align-items:center;}
+        .astretch{align-items: stretch;}
+        .nowrap{flex-wrap:wrap}
+        .one{flex:1;}
+        .top{top:0;position:absolute;}
+        .bottom{bottom:0;position:absolute;}
+        .relative{position:relative}
+        .auto{margin:0 auto}
+        .center{text-align:center}
+
+       .layout{width:1920px;}
+        header{width:1920px;height:145px;margin-bottom:6px;background:url(img/head.png) no-repeat;}
+        footer{width:1920px;height:364px;padding:33px  368px 24px;
+            background:#dbdbdb;}
+        .main{width:1920px;background:url(img/bg-top.jpg) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .choice{width:990px;margin-top:658px;height:47px;}
+        .choice li{margin-right:10px;width:155px;height:47px;transform: skew(-20deg,0deg);float:left;
+        background: #5ec118;font-size: 18px;color:white;}
+        .choice li a{display:block;color:white;line-height:40px;transform: skew(20deg,0deg)}
+        .choice li p{background: #ffef03;height:8px;width:100%;}
+        .choice .active{background:#defaff;color:#075eec;}
+        .choice .active a{color:#075eec;}
+        .move{width:990px;height:245px;background:url(img/move.png) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .move .text{margin:66px 0 0 348px;width:490px;height:135px;}
+        .move .text p{line-height:26px;font-size:16px;  }
+        h1{margin-top:80px;font-size:40px;color:white;}
+        h5{margin-top:10px;font-size:18px;color:#9bc7fd;}
+        .name{color:#75570c;width:130px;height:30px;background:#f9e533;
+            border-radius: 14px;line-height:30px;margin-top:50px; }
+        .img{width:759px;height:352px;margin-top:35px;}
+        h2{font-size:40px;color:#075eec;margin-top:120px;height:55px;}
+        h6{font-size:20px;color:#075eec;height:22px;}
+        h3{font-size:30px;color:#075eec;height:32px;margin-top:25px;}
+        .section{width:385px;height:225px;}
+        .lu{
+            width:990px;
+        }
+        .detail{width:990px;height:135px;line-height:42px;font-size: 20px;margin-bottom:160px;}
+        .rules{width:550px;height:135px;}
+        .process{width:420px;height:135px;}
+        .item{height:176px;border:1px solid red;flex:0 0 33.33%}
+        .in{width:990px;height:253px;margin-top:72px;margin-bottom:92px;}
+        .in>div{width:200px;height:253px;background:#d7e7ff;padding-top:25px;}
+        .in>div:hover{ color:#fff;}
+        .bg{width:92px;height:103px;background:url(img/bg.png) no-repeat;}
+        .bg-out{width:92px;height:103px;background:url(img/bg.png) no-repeat -289px 0;}
+        .bg-money{width:92px;height:103px;background:url(img/bg.png) no-repeat -579px 0;}
+        header{height:40px;background:#f4f4f4;padding:0 350px;font-size:14px;}
+        .hello{}
+        .align{width:1px;height:100%;background:#333;}
+        .nav{height:100px;padding:0 350px;font-size:14px; background-color: #fafafa;}
+        .logo{ width:165px;height:48px;background:url(img/logo.png) no-repeat;margin-right:10px;}
+
+        .logo-text{ font-weight:normal;width:180px;height:43px;border-left:2px solid #dcdddd;padding-left:15px;top:5px;}
+        .input{width:558px;height:40px;border:2px solid #0ab2e4;}
+        .product{width:100px;height:100%;background:#f5f5f5;border-right:1px solid #dcdddd;line-height:40px;}
+        input{border:none;outline:none;line-height:40px;width:359px;height:100%;padding-left:6px;}
+        .search{width:100px;height:100%;background:#0ab2e4;color:white;line-height:40px;}
+        .gw{width:150px;height:40px;border:1px solid #dddddd;background:#f5f5f5}
+        .bottom>div:nth-child(1){width:310px;}
+            </style>
+</head>
+<body>
+<div class=" layout ">
+    <header class="flex space-between acenter">
+        <div class="hello ">
+          您好！欢迎光临<a href="">链玻网！</a>
+            <span></span>登录<span class="align"></span>
+            <span></span>注册
+        </div>
+        <div class="help">
+            帮助中心｜我的消息｜我的收藏｜联系客服｜网站导航｜
+        <span>客服热线：400-806-6188</span><span></span></div>
+    </header>
+    <div class="nav flex space-between acenter">
+        <div class="flex row  acenter">
+            <div class="logo"></div>
+            <div class="flex column logo-text astart relative">
+              <p>玻璃行业020供应链服务</p>
+              <p>交易撮合领导者</p>
+            </div>
+
+        </div>
+        <div class="input flex row">
+           <div class="product center">产品 <span></span></div>
+            <input type="text" placeholder="请输入你的银行账号及密码">
+           <div class="search center">搜索</div>
+        </div>
+        <div class="gw"><span></span>购物车中 <i>0</i>件</div>
+    </div>
+    <div class="main">
+        <ul class="choice auto relative">
+            <li class="center active"><a href="index.html">首页</a><p class="bottom"></p>
+            </li>
+            <li class="center"><a href="in.html">采购商入口</a><p class="bottom"></p></li>
+            <li class="center "><a href="">供应商入口</a><p class="bottom"></p></li>
+            <li class="center "><a href="">金融授信</a><p class="bottom"></p></li>
+        </ul>
+        <div class="move auto">
+            <div class="text">
+                <p>【活动时间】：<span>2016年12月28日</span></p>
+                <p>【报名时间】：2016年12月5日-2016年12月16日</p>
+                <p>【商品审核时间】：2016年12月15日-2016年12月22日</p>
+                <p>【活动对象】：面向玻璃行业的所有大中小企业</p>
+                <p>【活动方式】：登录网址<a href="">www.lbw18.com/1228</a>参与报名</p>
+            </div>
+
+        </div>
+        <div class="in flex space-around auto">
+            <div>
+                <div class="bg auto"></div>
+                <h3 class="center">采购商</h3>
+                <h6 class="center">入口></h6>
+            </div>
+            <div>
+                <div class="bg-out auto"></div>
+                <h3 class="center">供应商</h3>
+                <h6 class="center">入口></h6>
+            </div>
+            <div>
+                <div class="bg-money auto"></div>
+                <h3 class="center">金融授信</h3>
+                <h6 class="center">入口></h6>
+            </div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div class="flex space-between bottom">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="lar"></div>
+    </footer>
+</div>
+</body>
+</html>

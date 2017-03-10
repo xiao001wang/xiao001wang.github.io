@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        html, body { min-height: 100%;font-family:Microsoft Yahei;}
+        html {font-size: 50px;}
+        body { background-color: #f4f4f4; font-size: 14px;}
+        ul { list-style-type: none;}
+        a, input, button, textarea, img { border: 0; -webkit-tap-highlight-color:rgba(0,0,0,0);} /*去除点击阴影*/
+        h1, h2, h3, h4, h5, h6{ font-weight:normal;}
+        a{ text-decoration:none; color:#333;}
+        a:hover{ text-decoration:none; color:#f49503;}
+        i, em { font-style: normal;}
+        .fl { float:left;}
+        .fr { float:right;}
+        .cf {*zoom:1;}
+        .cf:after { content:""; display:table; clear:both;}
+
+        .flex{display:flex;}
+        .row{flex-direction: row}
+        .column{flex-direction:column;}
+        .space-around{justify-content: space-around}
+        .space-between{justify-content: space-between}
+        .astart{align-items:flex-start;}
+        .aend{align-items:flex-end;}
+        .acenter{align-items:center;}
+        .astretch{align-items: stretch;}
+        .nowrap{flex-wrap:wrap}
+        .one{flex:1;}
+        .top{top:0;position:absolute;}
+        .bottom{bottom:0;position:absolute;}
+        .relative{position:relative}
+        .auto{margin:0 auto}
+        .center{text-align:center}
+
+        .layout{width:1920px;}
+        header{width:1920px;height:145px;margin-bottom:6px;background:url(img/head.png) no-repeat;}
+        footer{width:1920px;height:360px;background:url(img/footer.png) no-repeat;}
+        .main{width:1920px;background:url(img/bg-top.jpg) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .choice{width:990px;margin-top:658px;height:47px;}
+        .choice li{margin-right:10px;width:155px;height:47px;transform: skew(-20deg,0deg);float:left;
+            background: #5ec118;font-size: 18px;color:white;}
+        .choice li a{display:block;color:white;line-height:40px;transform: skew(20deg,0deg)}
+        .choice li p{background: #ffef03;height:8px;width:100%;}
+        .choice .active{background:#defaff;color:#075eec;}
+        .choice .active a{color:#075eec;}
+        .move{width:990px;height:245px;background:url(img/move.png) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .move .text{margin:66px 0 0 348px;width:490px;height:135px;}
+        .move .text p{line-height:26px;font-size:16px;  }
+        h1{margin-top:80px;font-size:40px;color:white;}
+        h5{margin-top:10px;font-size:18px;color:#9bc7fd;}
+        .name{color:#75570c;width:130px;height:30px;background:#f9e533;
+            border-radius: 14px;line-height:30px;margin-top:50px; }
+        .img{width:759px;height:352px;margin-top:35px;}
+        h2{font-size:40px;color:#075eec;margin-top:120px;height:55px;}
+        h6{font-size:20px;color:#075eec;height:22px;}
+        .right h3{font-size:30px;color:#075eec;height:32px;line-height:32px;
+            justify-content:flex-start;align-items:center;}
+        .left h3{font-size:30px;color:#075eec;height:32px;line-height:32px;
+            justify-content:flex-end;align-items:center;}
+        .lu{
+            width:990px;
+        }
+        .detail{width:990px;height:135px;line-height:42px;font-size: 20px;margin-bottom:160px;}
+        .rules{width:550px;height:135px;}
+        .process{width:420px;height:135px;}
+        .item{height:176px;border:1px solid red;flex:0 0 33.33%}
+        .in{width:990px;height:253px;margin-top:72px;margin-bottom:92px;}
+        .in>div{width:200px;height:253px;background:#d7e7ff;padding-top:25px;}
+        .in>div:hover{ color:#fff;}
+        .bg{width:92px;height:103px;background:url(img/bg.png) no-repeat;}
+        .bg-out{width:92px;height:103px;background:url(img/bg.png) no-repeat -289px 0;}
+        .bg-money{width:92px;height:103px;background:url(img/bg.png) no-repeat -579px 0;}
+        h1{font-size:68px;color:#ffa212; margin-bottom:40px;}
+        .content{padding-top:85px;background: #f8fbff;width:1204px;}
+        .process{height:735px;width:1204px;flex-direction:row;}
+        .left{width:566px;border-right:2px solid #1482ff;height:100%;padding-top:130px}
+
+        .right{width:636px;height:100%;padding-top:60px;}
+        .right h3 .row{height:2px;width:45px;background:#0e7fff;left:-2px;line-height:32px;}
+        .right h3 .radius{width:19px;height:19px;border-radius: 50%;box-shadow:0 0 10px #c9e2ff;
+            left:-2px;background:#0e7fff;margin-right:23px;}
+        .long .row{height:2px;width:75px;background:#0e7fff;right:-2px;line-height:32px;}
+        .short{margin-top:115px;}
+        .short .row{height:2px;width:35px;background:#0e7fff;right:-2px;line-height:32px;}
+        .left h3 .radius{width:19px;height:19px;border-radius: 50%;box-shadow:0 0 10px #c9e2ff;
+            right:-2px;background:#0e7fff;margin-left:23px;}
+        .left .small{font-size:22px;margin-left:280px;color:#476990;height:25px;line-height:40px;}
+        .small{font-size:22px;margin-left:88px;color:#476990;height:25px;line-height:40px;}
+        .section{margin-left:60px;margin-top:10px;background:#e2ebf8;padding-left:75px;padding-top:20px;
+        width:400px;height:150px;}
+        .section li{color:#476990;font-size:22px;line-height:33px;}
+
+        .qy{
+            width:394px;color:#476990;font-size:22px;line-height:33px;
+            height:50px;margin-left:88px;margin-top:10px;  }
+        .please{margin-top:80px;}
+        .process-d{margin-top:100px;}
+        .inner{width:310px;height:185px;background:lawngreen;padding-left:15px;}
+        .inner dt{line-height:30px;font-size:18px;font-weight:bold;}
+        .inner dd{line-height:30px;margin-left:10px;font-size:18px;}
+         .left ol{margin-left:100px;margin-top:10px;background:#e2ebf8;
+             width:400px;height:343px;padding-left:40px;padding-top:10px}
+        .left ol li{color:#476990;font-size:22px;line-height:33px;}
+        .content>ol{width:1036px;height:170px;
+            padding:30px 0 30px 45px;}
+        .once{margin-top:100px;height:50px;width:348px; font-size:20px;line-height:50px}
+        .number{font-size:16px;margin-top:20px;}
+        .oner{font-size:16px;margin-top:60px;margin-bottom:25px;}
+    </style>
+</head>
+<body>
+<div class=" layout ">
+    <header></header>
+    <div class="main">
+        <ul class="choice auto relative">
+            <li class="center "><a href="index.html">首页</a><p class="bottom"></p>
+            </li>
+            <li class="center"><a href="in.html">采购商入口</a><p class="bottom"></p></li>
+            <li class="center "><a href="">供应商入口</a><p class="bottom"></p></li>
+            <li class="center active"><a href="money.html">金融授信</a><p class="bottom"></p></li>
+        </ul>
+
+        </div>
+
+        <div class="content auto">
+            <h1 class="center">金融授信</h1>
+            <div class="process flex">
+                <div class="left">
+                     <h3 class="flex long">
+                         <p>授信时间</p>
+                         <div class="radius relative"></div>
+                         <div class="row relative"></div>
+                     </h3>
+                    <p class="small">2016年12月28日</p>
+                    <h3 class="flex short">
+                        <p>申请流程</p>
+                        <div class="radius relative"></div>
+                        <div class="row relative"></div>
+                    </h3>
+                    <ol>
+                        <li>在线注册，提交授信机构申请；<br>
+                            <dl class="inner">
+                                <dt>提交审核材料包括</dt>
+                                <dd>企业营业执照（正副本）</dd>
+                                <dd>组织结构代码证（正副本）</dd>
+                                <dd>基本户开户许可证</dd>
+                                <dd>国税、地税登记扫描本</dd>
+                                <dd>验资报告</dd>
+                            </dl>
+                        </li>
+                        <li>平台对授信机构信用进行审核评估</li>
+                        <li>审核通过，签订合同，即可放款</li>
+                    </ol>
+                </div>
+                <div class="right">
+                    <h3 class="flex ">
+                        <div class="row relative"></div>
+                        <div class="radius relative"></div>
+                        <p>申请时间</p>
+                    </h3>
+                    <p class="small">2016年12月5日~2016年12月28号</p>
+                    <h3 class="flex please">
+                        <div class="row relative"></div>
+                        <div class="radius relative"></div>
+                        <p>申请条件</p>
+                    </h3>
+                    <ol class="section">
+                        <li> 成立时间为1年以上的企业</li>
+                        <li> 年营业额不少于500万的企业</li>
+                        <li>  必须链玻网平台认证通过的企业</li>
+                    </ol>
+                    <h3 class="flex process-d">
+                        <div class="row relative"></div>
+                        <div class="radius relative"></div>
+                        <p>资金授信的企业条件</p>
+                    </h3>
+                    <p class="qy">凡报名参与玻璃次日活动的企业，均可向
+                        链玻网提交资金申请</p>
+                </div>
+            </div>
+            <h3 class="center">活动规则</h3>
+            <div class="center"></div>
+            <ol type="A" class="section auto">
+                <li>活动期间未按约定为商家提供约定服务的企业，取消企业半年内参与链玻网任何活动资格；</li>
+                <li>活动商家的活动价格与实际成交价格不符，不履行交易，取消其参加往后所有链玻网相关活动的资格；</li>
+                <li>任何违反ab两条规则的企业，链玻网将永久不给予其金融授信。</li>
+            </ol>
+            <div class="once auto center">立即申请</div>
+            <div class="number auto center">服务热线：400-806-6188</div>
+            <div class="oner auto center">*本次活动最终解释权归链玻网（www.lbw18.com）所有</div>
+        </div>
+
+    </div>
+
+
+    <footer></footer>
+</div>
+</body>
+</html>

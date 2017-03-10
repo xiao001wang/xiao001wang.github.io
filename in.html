@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        html, body { min-height: 100%;font-family:Microsoft Yahei;}
+        html {font-size: 50px;}
+        body { background-color: #f4f4f4; font-size: 14px;}
+        ul,li { list-style-type: none;}
+        a, input, button, textarea, img { border: 0; -webkit-tap-highlight-color:rgba(0,0,0,0);} /*去除点击阴影*/
+        h1, h2, h3, h4, h5, h6{ font-weight:normal;}
+        a{ text-decoration:none; color:#333;}
+        a:hover{ text-decoration:none; color:#f49503;}
+        i, em { font-style: normal;}
+        .fl { float:left;}
+        .fr { float:right;}
+        .cf {*zoom:1;}
+        .cf:after { content:""; display:table; clear:both;}
+
+        .flex{display:flex;}
+        .row{flex-direction: row}
+        .column{flex-direction:column;}
+        .space-around{justify-content: space-around}
+        .space-between{justify-content: space-between}
+        .astart{align-items:flex-start;}
+        .aend{align-items:flex-end;}
+        .acenter{align-items:center;}
+        .astretch{align-items: stretch;}
+        .nowrap{flex-wrap:wrap}
+        .one{flex:1;}
+        .top{top:0;position:absolute;}
+        .bottom{bottom:0;position:absolute;}
+        .relative{position:relative}
+        .auto{margin:0 auto}
+        .center{text-align:center}
+
+        .layout{width:1920px;}
+        header{width:1920px;height:145px;margin-bottom:6px;background:url(img/head.png) no-repeat;}
+        footer{width:1920px;height:360px;background:url(img/footer.png) no-repeat;}
+        .main{width:1920px;background:url(img/bg-top.jpg) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .choice{width:990px;margin-top:658px;height:47px;}
+        .choice li{margin-right:10px;width:155px;height:47px;transform: skew(-20deg,0deg);float:left;
+            background: #5ec118;font-size: 18px;color:white;}
+        .choice li a{display:block;color:white;line-height:40px;transform: skew(20deg,0deg)}
+        .choice li p{background: #ffef03;height:8px;width:100%;}
+        .choice .active{background:#defaff;color:#075eec;}
+        .choice .active a{color:#075eec;}
+        .move{width:990px;height:245px;background:url(img/move.png) no-repeat;border:1px solid rgba(0,0,0,0)}
+        .move .text{margin:66px 0 0 348px;width:490px;height:135px;}
+        .move .text p{line-height:26px;font-size:16px;  }
+        h1{margin-top:80px;font-size:40px;color:white;}
+        h5{margin-top:10px;font-size:18px;color:#9bc7fd;}
+        .name{color:#75570c;width:130px;height:30px;background:#f9e533;
+            border-radius: 14px;line-height:30px;margin-top:50px; }
+        .img{width:759px;height:352px;margin-top:35px;}
+        h2{font-size:40px;color:#0078ff;margin-top:120px;height:55px;}
+        h6{font-size:20px;color:#46688f;}
+        .section{width:385px;height:225px;}
+        .lu{
+            width:990px;
+        }
+        .detail{width:990px;height:135px;line-height:42px;font-size: 20px;margin-bottom:160px;}
+        .rules{width:550px;height:135px;}
+        .process{width:420px;height:135px;}
+        .item{height:176px;border:1px solid red;flex:0 0 33.33%}
+    </style>
+</head>
+<body>
+<div class=" layout ">
+    <header></header>
+    <div class="main">
+        <ul class="choice auto relative">
+            <li class="center "><a href="index.html">首页</a><p class="bottom"></p>
+            </li>
+            <li class="center active"><a href="in.html">采购商入口</a><p class="bottom"></p></li>
+            <li class="center "><a href="out.html">供应商入口</a><p class="bottom"></p></li>
+            <li class="center "><a href="money.html">金融授信</a><p class="bottom"></p></li>
+        </ul>
+        <div class="move auto">
+            <div class="text">
+                <p>【活动时间】：<span>2016年12月28日</span></p>
+                <p>【报名时间】：2016年12月5日-2016年12月16日</p>
+                <p>【商品审核时间】：2016年12月15日-2016年12月22日</p>
+                <p>【活动对象】：面向玻璃行业的所有大中小企业</p>
+                <p>【活动方式】：登录网址<a href="">www.lbw18.com/1228</a>参与报名</p>
+            </div>
+
+        </div>
+        <h1 class="center">参加条件</h1>
+        <h5 class="center">- CONDITION OF PARTICIPATION -</h5>
+
+        <div class="img flex auto nowrap">
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+
+        </div>
+        <div class="name auto center ">立即取名</div>
+
+        <h1 class="center">商品入驻条件</h1>
+        <h5 class="center">- GOODS ENTRY CONDITIONS -</h5>
+
+        <div class="img flex auto nowrap">
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+            <div class="one item"></div>
+
+
+        </div>
+        <div class="name auto center">立即取名</div>
+
+
+    </div>
+    <h2 class="center">发票问题</h2>
+    <h6 class="center">参与活动的企业必须明确标示所开发票的类型，以及开票的类型，以及开票信息</h6>
+    <div class=" lu flex space-between auto">
+        <div class="section">
+            <h2 class="center">活动规则</h2>
+            <h6 class="center">- ACTIVITY RULES -</h6>
+        </div>
+        <div class="section">
+            <h2 class="center">活动流程</h2>
+            <h6 class="center">- THE PROCESS -</h6>
+        </div>
+
+    </div>
+    <div class="detail flex auto space-between">
+        <div class="rules">
+            <p>报名企业必须遵从网站"公平交易"的活动规则，严禁企业恶意抬价，一经发现取消活动资格。</p>
+            <p>本次活动最终解释权归链玻网（www.lbw10.com）所有。</p>
+        </div>
+        <div class="process">
+            <p>进入活动页面，报名注册，点击提交资料。</p>
+            <p>提交入驻商品及价格，等待平台审核。</p>
+            <p>审核通过，入驻成功。</p>
+        </div>
+    </div>
+    <footer></footer>
+</div>
+</body>
+</html>
