@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Title</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box;}
         html, body { min-height: 100%;font-family:Microsoft Yahei;}
-        html {font-size: 50px;}
         body { background-color: #f4f4f4; font-size: 14px;}
         ul,li { list-style-type: none;}
         a, input, button, textarea, img { border: 0; -webkit-tap-highlight-color:rgba(0,0,0,0);} /*去除点击阴影*/
@@ -14,92 +14,109 @@
         a{ text-decoration:none; color:#333;}
         a:hover{ text-decoration:none; color:#f49503;}
         i, em { font-style: normal;}
-        .fl { float:left;}
-        .fr { float:right;}
-        .cf {*zoom:1;}
-        .cf:after { content:""; display:table; clear:both;}
-
         .flex{display:flex;}
         .row{flex-direction: row}
         .column{flex-direction:column;}
         .space-around{justify-content: space-around}
         .space-between{justify-content: space-between}
-
         .astart{align-items:flex-start;}
-        .aend{align-items:flex-end;}
         .acenter{align-items:center;}
-        .astretch{align-items: stretch;}
-        .nowrap{flex-wrap:wrap}
-        .one{flex:1;}
-        .top{top:0;position:absolute;}
-        .bottom{bottom:0;position:absolute;}
         .relative{position:relative}
         .auto{margin:0 auto}
         .center{text-align:center}
 
-       .layout{width:1920px;}
-        header{width:1920px;height:145px;margin-bottom:6px;background:url(img/head.png) no-repeat;}
-        footer{width:1920px;height:364px;padding:33px  368px 24px;
-            background:#dbdbdb;}
-        .main{width:1920px;background:url(img/bg-top.jpg) no-repeat;border:1px solid rgba(0,0,0,0)}
+
+        .main{width:1200px;background:url(img/bg.jpg) no-repeat;background-size:100% auto;border:1px solid rgba(0,0,0,0)}
         .choice{width:990px;margin-top:658px;height:47px;}
         .choice li{margin-right:10px;width:155px;height:47px;transform: skew(-20deg,0deg);float:left;
-        background: #5ec118;font-size: 18px;color:white;}
+            background: #5ec118;font-size: 18px;color:white;}
         .choice li a{display:block;color:white;line-height:40px;transform: skew(20deg,0deg)}
         .choice li p{background: #ffef03;height:8px;width:100%;}
         .choice .active{background:#defaff;color:#075eec;}
         .choice .active a{color:#075eec;}
         .move{width:990px;height:245px;background:url(img/move.png) no-repeat;border:1px solid rgba(0,0,0,0)}
         .move .text{margin:66px 0 0 348px;width:490px;height:135px;}
-        .move .text p{line-height:26px;font-size:16px;  }
+        .move .text p{line-height:26px;font-size:16px; font-weight:bold; }
+        .move .text p span,.move .text p a{color:#0078ff;}
+        .move .text p a{
+            text-decoration:underline;}
         h1{margin-top:80px;font-size:40px;color:white;}
         h5{margin-top:10px;font-size:18px;color:#9bc7fd;}
-        .name{color:#75570c;width:130px;height:30px;background:#f9e533;
-            border-radius: 14px;line-height:30px;margin-top:50px; }
-        .img{width:759px;height:352px;margin-top:35px;}
+
         h2{font-size:40px;color:#075eec;margin-top:120px;height:55px;}
         h6{font-size:20px;color:#075eec;height:22px;}
         h3{font-size:30px;color:#075eec;height:32px;margin-top:25px;}
-        .section{width:385px;height:225px;}
-        .lu{
-            width:990px;
-        }
-        .detail{width:990px;height:135px;line-height:42px;font-size: 20px;margin-bottom:160px;}
-        .rules{width:550px;height:135px;}
-        .process{width:420px;height:135px;}
-        .item{height:176px;border:1px solid red;flex:0 0 33.33%}
+
         .in{width:990px;height:253px;margin-top:72px;margin-bottom:92px;}
         .in>div{width:200px;height:253px;background:#d7e7ff;padding-top:25px;}
         .in>div:hover{ color:#fff;}
         .bg{width:92px;height:103px;background:url(img/bg.png) no-repeat;}
         .bg-out{width:92px;height:103px;background:url(img/bg.png) no-repeat -289px 0;}
         .bg-money{width:92px;height:103px;background:url(img/bg.png) no-repeat -579px 0;}
-        header{height:40px;background:#f4f4f4;padding:0 350px;font-size:14px;}
-        .hello{}
-        .align{width:1px;height:100%;background:#333;}
-        .nav{height:100px;padding:0 350px;font-size:14px; background-color: #fafafa;}
-        .logo{ width:165px;height:48px;background:url(img/logo.png) no-repeat;margin-right:10px;}
 
-        .logo-text{ font-weight:normal;width:180px;height:43px;border-left:2px solid #dcdddd;padding-left:15px;top:5px;}
-        .input{width:558px;height:40px;border:2px solid #0ab2e4;}
+        .layout{width:1200px;}
+        header{height:40px;background:#f4f4f4;font-size:12px;width:1200px;margin-bottom:6px;}
+        .hello a{color:#3999bd;}
+        .hello i{display:inline-block;height:14px;width:14px;background:url(img/sin.png) no-repeat;margin-right:3px;}
+        .hello span:last-child{display:inline-block;height:14px;width:17px;background:url(img/sup.png) no-repeat;}
+        .help span:first-child{color:#666;font-weight: bold;margin-left:23px;}
+        .help span:last-child{display:inline-block;height:20px;width:136px;background:url(img/tel.png) no-repeat;
+            position:relative;top:5px;}
+        .align{display:inline-block;width:1px;height:100%;background:#333;}
+        .nav{height:100px;font-size:14px; background-color: #fafafa;}
+        .logo{ width:165px;height:48px;background:url(img/logo.png) no-repeat;margin-right:10px;}
+        .logo-text{ font-weight:normal;width:180px;height:43px;border-left:2px solid #dcdddd;padding-left:15px;top:5px;
+        color:#22adec;}
+        .input{width:558px;height:40px;border:2px solid #0ab2e4;border-radius: 2px;}
         .product{width:100px;height:100%;background:#f5f5f5;border-right:1px solid #dcdddd;line-height:40px;}
+        .product span{width:13px;height:7px;display:inline-block;
+           background:url(img/pro.jpg)  no-repeat;;  }
         input{border:none;outline:none;line-height:40px;width:359px;height:100%;padding-left:6px;}
         .search{width:100px;height:100%;background:#0ab2e4;color:white;line-height:40px;}
-        .gw{width:150px;height:40px;border:1px solid #dddddd;background:#f5f5f5}
-        .bottom>div:nth-child(1){width:310px;}
-            </style>
+        .gw{width:150px;height:40px;border:1px solid #dddddd;background:#f5f5f5;border-radius: 2px;}
+        .gw span{display:inline-block;height:23px;width:25px;background:url(img/gw.jpg)  no-repeat;margin:0 10px;position:relative;top:5px;}
+        .gw i{color:#f00;}
+
+        footer{width:1200px;height:364px;padding:33px  0 24px;  background:#dbdbdb;}
+        .bottom{height:180px;margin-bottom:50px;}
+        .bottom>dl:nth-child(1){width:313px;}
+        .bottom>dl:nth-child(1) dt{width:228px;height:55px;background:url(img/rx.png) no-repeat;}
+        .bottom>dl:nth-child(1) dd{width:173px;height:54px;background:url(img/lb.png) no-repeat;margin:30px 0 0 8px;}
+        .bottom>dl:nth-child(2){width:135px;}
+        .bottom>dl:nth-child(2) span{display:inline-block;width:23px;height:24px;background:url(img/zn.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(2) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(2) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(3){width:135px;}
+        .bottom>dl:nth-child(3) span{display:inline-block;width:25px;height:20px;background:url(img/sj.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(3) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(3) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(4){width:148px;}
+        .bottom>dl:nth-child(4) span{display:inline-block;width:24px;height:18px;background:url(img/problem.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(4) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(4) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(5){width:308px;}
+        .bottom>dl:nth-child(5) dt{width:161px;height:160px;background:url(img/exm.png) no-repeat;}
+        .bottom>dl:nth-child(5) dd{width:161px;height:20px;}
+        .lar{padding-top:20px;border-top:1px solid #cdcdcd;}
+        .lar-left{width:385px;}
+        .lar-left p{line-height:23px;font-size:12px;}
+        .lar-right{width:285px;height:31px;}
+        .lar-right>div:nth-child(1){width:83px;height:31px;background:url(img/110.png) no-repeat; }
+        .lar-right>div:nth-child(2){width:90px;height:31px;background:url(img/kx.png) no-repeat; }
+        .lar-right>div:nth-child(3){width:89px;height:31px;background:url(img/cx.jpg) no-repeat; }
+        </style>
 </head>
 <body>
-<div class=" layout ">
+<div class=" layout auto">
     <header class="flex space-between acenter">
         <div class="hello ">
           您好！欢迎光临<a href="">链玻网！</a>
-            <span></span>登录<span class="align"></span>
+            <i></i>登录<span class="align"></span>
             <span></span>注册
         </div>
         <div class="help">
             帮助中心｜我的消息｜我的收藏｜联系客服｜网站导航｜
-        <span>客服热线：400-806-6188</span><span></span></div>
+        <span>客服热线：</span><span></span></div>
     </header>
     <div class="nav flex space-between acenter">
         <div class="flex row  acenter">
@@ -131,7 +148,7 @@
                 <p>【报名时间】：2016年12月5日-2016年12月16日</p>
                 <p>【商品审核时间】：2016年12月15日-2016年12月22日</p>
                 <p>【活动对象】：面向玻璃行业的所有大中小企业</p>
-                <p>【活动方式】：登录网址<a href="">www.lbw18.com/1228</a>参与报名</p>
+                <p>【活动方式】：登录网址<a href="">Http://www.lbw18.com/</a>参与报名</p>
             </div>
 
         </div>
@@ -158,13 +175,52 @@
 
     <footer>
         <div class="flex space-between bottom">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+            <dl>
+
+                <dt></dt>
+                <dd></dd>
+            </dl>
+            <dl>
+                <span class="relative"></span>
+                <dt>采购指南</dt>
+                <dd>如何发布采购信息</dd>
+                <dd>如何管理采购订单</dd>
+                <dd>如何快速找货源</dd>
+                <dd>如何确认</dd>
+            </dl>
+            <dl>
+                <span class="relative"></span>
+                <dt>商家指南</dt>
+                <dd>如何管理店铺</dd>
+                <dd>如何管理销售订单</dd>
+                <dd>如何快速委托交易</dd>
+            </dl>
+            <dl>
+                <span class="relative"></span>
+                <dt>常见问题</dt>
+                <dd>如何注册成为会员</dd>
+                <dd>如何管理子账号</dd>
+                <dd>如何升级成为企业会员</dd>
+                <dd>如何修改密码？</dd>
+            </dl>
+            <dl>
+
+                <dt class="auto"></dt>
+                <dd class="auto">关注"链玻网"微信公众号</dd>
+            </dl>
         </div>
-        <div class="lar"></div>
+        <div class="lar flex space-between">
+            <div class="lar-left">
+                <p>关于我们｜法律声明｜诚聘英才｜联系我们｜友情链接｜</p>
+                <p>ICP备案号：粤ICP备16022836号-1</p>
+                <p>Copyright&copy;2016-2016 深圳市前海链贝互联网科技有限公司版权所有</p>
+            </div>
+            <div class="lar-right flex space-between">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </footer>
 </div>
 </body>

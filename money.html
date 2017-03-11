@@ -31,16 +31,16 @@
         .nowrap{flex-wrap:wrap}
         .one{flex:1;}
         .top{top:0;position:absolute;}
-        .bottom{bottom:0;position:absolute;}
+
         .relative{position:relative}
         .auto{margin:0 auto}
         .center{text-align:center}
 
-        .layout{width:1920px;}
-        header{width:1920px;height:145px;margin-bottom:6px;background:url(img/head.png) no-repeat;}
-        footer{width:1920px;height:360px;background:url(img/footer.png) no-repeat;}
-        .main{width:1920px;background:url(img/bg-top.jpg) no-repeat;border:1px solid rgba(0,0,0,0)}
-        .choice{width:990px;margin-top:658px;height:47px;}
+
+
+
+        .main{width:1200px;background:url(img/bg-short.jpg) no-repeat;padding-top:658px;}
+        .choice{width:990px;height:47px;}
         .choice li{margin-right:10px;width:155px;height:47px;transform: skew(-20deg,0deg);float:left;
             background: #5ec118;font-size: 18px;color:white;}
         .choice li a{display:block;color:white;line-height:40px;transform: skew(20deg,0deg)}
@@ -48,8 +48,11 @@
         .choice .active{background:#defaff;color:#075eec;}
         .choice .active a{color:#075eec;}
         .move{width:990px;height:245px;background:url(img/move.png) no-repeat;border:1px solid rgba(0,0,0,0)}
-        .move .text{margin:66px 0 0 348px;width:490px;height:135px;}
+        .move .text{margin:66px 0 0 348px;width:490px;height:135px;font-weight:bold;}
         .move .text p{line-height:26px;font-size:16px;  }
+        .move .text p span,.move .text p a{color:#0078ff;}
+        .move .text p a{
+            text-decoration:underline;}
         h1{margin-top:80px;font-size:40px;color:white;}
         h5{margin-top:10px;font-size:18px;color:#9bc7fd;}
         .name{color:#75570c;width:130px;height:30px;background:#f9e533;
@@ -76,10 +79,10 @@
         .bg-money{width:92px;height:103px;background:url(img/bg.png) no-repeat -579px 0;}
         h1{font-size:68px;color:#ffa212; margin-bottom:40px;}
         .content{padding-top:85px;background: #f8fbff;width:1204px;}
-        .process{height:735px;width:1204px;flex-direction:row;}
-        .left{width:566px;border-right:2px solid #1482ff;height:100%;padding-top:130px}
-
-        .right{width:636px;height:100%;padding-top:60px;}
+        .process{height:735px;width:1200px;flex-direction:row;}
+        .left{width:564px;height:100%;padding-top:130px}
+        .middle{width:2px;background:linear-gradient(#fff,#1482ff,#fff)}
+        .right{width:634px;height:100%;padding-top:60px;}
         .right h3 .row{height:2px;width:45px;background:#0e7fff;left:-2px;line-height:32px;}
         .right h3 .radius{width:19px;height:19px;border-radius: 50%;box-shadow:0 0 10px #c9e2ff;
             left:-2px;background:#0e7fff;margin-right:23px;}
@@ -91,15 +94,16 @@
         .left .small{font-size:22px;margin-left:280px;color:#476990;height:25px;line-height:40px;}
         .small{font-size:22px;margin-left:88px;color:#476990;height:25px;line-height:40px;}
         .section{margin-left:60px;margin-top:10px;background:#e2ebf8;padding-left:75px;padding-top:20px;
-        width:400px;height:150px;}
+        width:400px;height:150px;list-style-type:none;}
         .section li{color:#476990;font-size:22px;line-height:33px;}
-
+        .section li span{display:inline-block;height:25px;width:25px;background:#fab30c;color:white;
+            line-height:25px;text-align:center;border-radius:50%;margin-right:8px;left:-25px;margin-left:-32px;}
         .qy{
             width:394px;color:#476990;font-size:22px;line-height:33px;
             height:50px;margin-left:88px;margin-top:10px;  }
         .please{margin-top:80px;}
         .process-d{margin-top:100px;}
-        .inner{width:310px;height:185px;background:lawngreen;padding-left:15px;}
+        .inner{width:310px;height:185px;background:#d4e0f2;padding-left:15px;}
         .inner dt{line-height:30px;font-size:18px;font-weight:bold;}
         .inner dd{line-height:30px;margin-left:10px;font-size:18px;}
          .left ol{margin-left:100px;margin-top:10px;background:#e2ebf8;
@@ -107,14 +111,97 @@
         .left ol li{color:#476990;font-size:22px;line-height:33px;}
         .content>ol{width:1036px;height:170px;
             padding:30px 0 30px 45px;}
-        .once{margin-top:100px;height:50px;width:348px; font-size:20px;line-height:50px}
-        .number{font-size:16px;margin-top:20px;}
-        .oner{font-size:16px;margin-top:60px;margin-bottom:25px;}
+        .once{margin-top:100px;height:50px;width:348px; font-size:20px;color:#6c4d0a;background:#f8e00c;
+            line-height:50px;font-weight:bold;border-radius:10px;}
+        .number{font-size:16px;margin-top:20px;color:#769ddc;}
+        .number span{color:#0e7fff;}
+        .oner{font-size:16px;margin-top:60px;margin-bottom:25px;color:#769ddc;;}
+         .rule{color:#005ec8;font-size:30px;font-weight:bold;}
+         .cir{width:7px;height:7px;
+             background:url(img/cir.jpg) no-repeat; margin-top:7px;margin-bottom:15px;}
+        .layout{width:1200px;}
+        header{height:40px;background:#f4f4f4;font-size:12px;width:1200px;margin-bottom:6px;}
+        .hello a{color:#3999bd;}
+        .hello i{display:inline-block;height:14px;width:14px;background:url(img/sin.png) no-repeat;margin-right:3px;}
+        .hello span:last-child{display:inline-block;height:14px;width:17px;background:url(img/sup.png) no-repeat;}
+        .help span:first-child{color:#666;font-weight: bold;margin-left:23px;}
+        .help span:last-child{display:inline-block;height:20px;width:136px;background:url(img/tel.png) no-repeat;
+            position:relative;top:5px;}
+        .align{display:inline-block;width:1px;height:100%;background:#333;}
+        .nav{height:100px;font-size:14px; background-color: #fafafa;}
+        .logo{ width:165px;height:48px;background:url(img/logo.png) no-repeat;margin-right:10px;}
+        .logo-text{ font-weight:normal;width:180px;height:43px;border-left:2px solid #dcdddd;padding-left:15px;top:5px;
+            color:#22adec;}
+        .input{width:558px;height:40px;border:2px solid #0ab2e4;border-radius: 2px;}
+        .product{width:100px;height:100%;background:#f5f5f5;border-right:1px solid #dcdddd;line-height:40px;}
+        .product span{width:13px;height:7px;display:inline-block;
+            background:url(img/pro.jpg)  no-repeat;;  }
+        input{border:none;outline:none;line-height:40px;width:359px;height:100%;padding-left:6px;}
+        .search{width:100px;height:100%;background:#0ab2e4;color:white;line-height:40px;}
+        .gw{width:150px;height:40px;border:1px solid #dddddd;background:#f5f5f5;border-radius: 2px;}
+        .gw span{display:inline-block;height:23px;width:25px;background:url(img/gw.jpg)  no-repeat;margin:0 10px;position:relative;top:5px;}
+        .gw i{color:#f00;}
+
+
+
+        /*footer*/
+        footer{width:1200px;height:364px;padding:33px  0 24px;  background:#dbdbdb;}
+        .bottom{height:180px;margin-bottom:50px;}
+        .bottom>dl:nth-child(1){width:313px;}
+        .bottom>dl:nth-child(1) dt{width:228px;height:55px;background:url(img/rx.png) no-repeat;}
+        .bottom>dl:nth-child(1) dd{width:173px;height:54px;background:url(img/lb.png) no-repeat;margin:30px 0 0 8px;}
+        .bottom>dl:nth-child(2){width:135px;}
+        .bottom>dl:nth-child(2) span{display:inline-block;width:23px;height:24px;background:url(img/zn.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(2) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(2) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(3){width:135px;}
+        .bottom>dl:nth-child(3) span{display:inline-block;width:25px;height:20px;background:url(img/sj.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(3) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(3) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(4){width:148px;}
+        .bottom>dl:nth-child(4) span{display:inline-block;width:24px;height:18px;background:url(img/problem.png) no-repeat;left:-35px;}
+        .bottom>dl:nth-child(4) dt{font-size:24px;color:#000;margin-top:-30px;}
+        .bottom>dl:nth-child(4) dd{line-height:28px;color:#4d4d4d;}
+        .bottom>dl:nth-child(5){width:308px;}
+        .bottom>dl:nth-child(5) dt{width:161px;height:160px;background:url(img/exm.png) no-repeat;}
+        .bottom>dl:nth-child(5) dd{width:161px;height:20px;}
+        .lar{padding-top:20px;border-top:1px solid #cdcdcd;}
+        .lar-left{width:385px;}
+        .lar-left p{line-height:23px;font-size:12px;}
+        .lar-right{width:285px;height:31px;}
+        .lar-right>div:nth-child(1){width:83px;height:31px;background:url(img/110.png) no-repeat; }
+        .lar-right>div:nth-child(2){width:90px;height:31px;background:url(img/kx.png) no-repeat; }
+        .lar-right>div:nth-child(3){width:89px;height:31px;background:url(img/cx.jpg) no-repeat; }
     </style>
 </head>
 <body>
-<div class=" layout ">
-    <header></header>
+<div class=" layout auto ">
+    <header class="flex space-between acenter">
+        <div class="hello ">
+            您好！欢迎光临<a href="">链玻网！</a>
+            <i></i>登录<span class="align"></span>
+            <span></span>注册
+        </div>
+        <div class="help">
+            帮助中心｜我的消息｜我的收藏｜联系客服｜网站导航｜
+            <span>客服热线：</span><span></span></div>
+    </header>
+    <div class="nav flex space-between acenter">
+        <div class="flex row  acenter">
+            <div class="logo"></div>
+            <div class="flex column logo-text astart relative">
+                <p>玻璃行业020供应链服务</p>
+                <p>交易撮合领导者</p>
+            </div>
+
+        </div>
+        <div class="input flex row">
+            <div class="product center">产品 <span></span></div>
+            <input type="text" placeholder="请输入你的银行账号及密码">
+            <div class="search center">搜索</div>
+        </div>
+        <div class="gw"><span></span>购物车中 <i>0</i>件</div>
+    </div>
     <div class="main">
         <ul class="choice auto relative">
             <li class="center "><a href="index.html">首页</a><p class="bottom"></p>
@@ -123,12 +210,21 @@
             <li class="center "><a href="">供应商入口</a><p class="bottom"></p></li>
             <li class="center active"><a href="money.html">金融授信</a><p class="bottom"></p></li>
         </ul>
+        <div class="move auto">
+            <div class="text">
+                <p>【活动时间】：<span>2016年12月28日</span></p>
+                <p>【报名时间】：2016年12月5日-2016年12月16日</p>
+                <p>【商品审核时间】：2016年12月15日-2016年12月22日</p>
+                <p>【活动对象】：面向玻璃行业的所有大中小企业</p>
+                <p>【活动方式】：登录网址<a href="">Http://www.lbw18.com/</a>参与报名</p>
+            </div>
 
+        </div>
         </div>
 
         <div class="content auto">
             <h1 class="center">金融授信</h1>
-            <div class="process flex">
+            <div class="process flex row">
                 <div class="left">
                      <h3 class="flex long">
                          <p>授信时间</p>
@@ -156,6 +252,7 @@
                         <li>审核通过，签订合同，即可放款</li>
                     </ol>
                 </div>
+                <div class="middle"></div>
                 <div class="right">
                     <h3 class="flex ">
                         <div class="row relative"></div>
@@ -170,7 +267,7 @@
                     </h3>
                     <ol class="section">
                         <li> 成立时间为1年以上的企业</li>
-                        <li> 年营业额不少于500万的企业</li>
+                        <li>  年营业额不少于500万的企业</li>
                         <li>  必须链玻网平台认证通过的企业</li>
                     </ol>
                     <h3 class="flex process-d">
@@ -182,22 +279,70 @@
                         链玻网提交资金申请</p>
                 </div>
             </div>
-            <h3 class="center">活动规则</h3>
-            <div class="center"></div>
-            <ol type="A" class="section auto">
-                <li>活动期间未按约定为商家提供约定服务的企业，取消企业半年内参与链玻网任何活动资格；</li>
-                <li>活动商家的活动价格与实际成交价格不符，不履行交易，取消其参加往后所有链玻网相关活动的资格；</li>
-                <li>任何违反ab两条规则的企业，链玻网将永久不给予其金融授信。</li>
+            <h3 class="center rule">活动规则</h3>
+            <div class=" cir auto"></div>
+            <ol  class="section auto">
+                <li><span>A</span>活动期间未按约定为商家提供约定服务的企业，取消企业半年内参与链玻网任何活动资格；</li>
+                <li><span>B</span>活动商家的活动价格与实际成交价格不符，不履行交易，取消其参加往后所有链玻网相关活动的资格；</li>
+                <li><span>C</span>任何违反ab两条规则的企业，链玻网将永久不给予其金融授信。</li>
             </ol>
             <div class="once auto center">立即申请</div>
-            <div class="number auto center">服务热线：400-806-6188</div>
+            <div class="number auto center">服务热线：<span>400-806-6188</span></div>
             <div class="oner auto center">*本次活动最终解释权归链玻网（www.lbw18.com）所有</div>
         </div>
 
     </div>
 
 
-    <footer></footer>
+<footer>
+    <div class="flex space-between bottom">
+        <dl>
+
+            <dt></dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <span class="relative"></span>
+            <dt>采购指南</dt>
+            <dd>如何发布采购信息</dd>
+            <dd>如何管理采购订单</dd>
+            <dd>如何快速找货源</dd>
+            <dd>如何确认</dd>
+        </dl>
+        <dl>
+            <span class="relative"></span>
+            <dt>商家指南</dt>
+            <dd>如何管理店铺</dd>
+            <dd>如何管理销售订单</dd>
+            <dd>如何快速委托交易</dd>
+        </dl>
+        <dl>
+            <span class="relative"></span>
+            <dt>常见问题</dt>
+            <dd>如何注册成为会员</dd>
+            <dd>如何管理子账号</dd>
+            <dd>如何升级成为企业会员</dd>
+            <dd>如何修改密码？</dd>
+        </dl>
+        <dl>
+
+            <dt class="auto"></dt>
+            <dd class="auto">关注"链玻网"微信公众号</dd>
+        </dl>
+    </div>
+    <div class="lar flex space-between">
+        <div class="lar-left">
+            <p>关于我们｜法律声明｜诚聘英才｜联系我们｜友情链接｜</p>
+            <p>ICP备案号：粤ICP备16022836号-1</p>
+            <p>Copyright&copy;2016-2016 深圳市前海链贝互联网科技有限公司版权所有</p>
+        </div>
+        <div class="lar-right flex space-between">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</footer>
 </div>
 </body>
 </html>
